@@ -6,8 +6,8 @@
 
 __author__ = 'Pawel "duskglow" Chojnacki'
 __copyright__ = 'Copyleft 2013 Pawel Chojnacki'
-__version__ = '0.0.8'
-__date__ = '19.06.2013'
+__version__ = '0.0.8.1'
+__date__ = '24.06.2013'
 __license__ = 'GPLv3'
 
 import argparse as ap
@@ -602,7 +602,7 @@ class VulgarCoder(Coder):
             self.rawtext.append(chr(i-63))
         if self.vrb:
             print "vulgar.decode: decoding matrix", str(self.rawtext)
-        return str(self.rawtext)
+        return ''.join(self.rawtext)
 
 class SubtleCoder(Coder):
     '''Encodes and decodes using subtle methods.'''
@@ -659,7 +659,7 @@ class SubtleCoder(Coder):
                 self.rawtext.append(channel)
         if self.vrb:
             print "subtle.decode: pixels encoded:", str(self.rawtext)
-        return str(self.rawtext)
+        return ''.join(self.rawtext)
 
 if __name__ == '__main__':
     Overlord()
